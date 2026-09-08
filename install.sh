@@ -449,8 +449,9 @@ main() {
     mkdir -p $is_conf_dir
 
     load core.sh
-    # create a reality config
-    add reality
+    # 创建默认 Reality 和 Hysteria2 节点，并固定监听端口
+    (add reality 57777)
+    (add hy2 57778 auto)
     # wait for background tasks (e.g., OpenRC service start)
     wait
     # remove tmp dir and exit.
